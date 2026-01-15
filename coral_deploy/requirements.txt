@@ -1,0 +1,14 @@
+Use this when you run inference on Coral and you want the lightest install (typical for TFLite runtime usage):
+
+requirements.txt
+opencv-python
+numpy
+tflite-runtime
+
+Notes:
+
+tflite-runtime is preferred on many edge devices because it is lighter than full TensorFlow.
+
+If your stream_cam_predict.py imports tensorflow directly, then replace tflite-runtime with tensorflow (or update the script to use tflite_runtime.interpreter).
+
+If you want a “safe” version that supports both import styles, you can keep only one (not both). Start with the minimal one above.
